@@ -1,0 +1,40 @@
+header{
+	text-align: center;
+	background-color: pink;
+	height: 300px;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+/*#heart{
+  font-size: 78px;
+  color: red;
+}*/
+.greetBtn{
+ width: 80px;
+ height:45px;
+}
+
+ .resetBtn{
+  width: 80px;
+  height:45px;
+ }
+
+ #greetings{
+     font-size: 19px;
+ }
+
+ .inputName{
+ 	height: 25px;
+ }
+/*section{
+  margin-right: 10px;
+  margin-top: 5px;
+  float-right: 90px;
+
+}*/
