@@ -6,6 +6,9 @@ function PeopleTogreet(storedUser){
   var nameAnLanguage = '';
   var peopleNames = {};
 
+
+
+
   function greetingFunction(name, langNames){
 
     if(name != ''){
@@ -45,7 +48,7 @@ function PeopleTogreet(storedUser){
   }
 
   function reset(){
-    return peopleNames = {}
+    peopleNames = {}
   }
 
   return {
@@ -53,6 +56,7 @@ function PeopleTogreet(storedUser){
     returnGreeting,
     greetCounter,
     enterName,
-    reset
+    reset,
+
   }
 }

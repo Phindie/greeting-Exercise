@@ -7,32 +7,26 @@ var resetButton = document.querySelector('.resetBtn');
 var referenceUser = localStorage.getItem('users');
 
 
-var storedUsers = referenceUser ? JSON.parse(referenceUser): {};
-
-for (var i = 0; i < storedUsers.length; i++) {
-  var name = storedUsers[i];
-  addName(storedUsers);
-}
-
-
+var storedUsers = referenceUser ? JSON.parse(referenceUser) : {};
+count.innerHTML = Object.keys(storedUsers).length;
 
 var greetFactory = PeopleTogreet(storedUsers)
 
-  function displayMsg(){
-    var greetingRadio = document.querySelector("input[name='languages']:checked");
+function displayMsg() {
+  var greetingRadio = document.querySelector("input[name='languages']:checked");
 
-    if (greetingRadio) {
+  if (greetingRadio) {
     var langNames = greetingRadio.value
   }
 
-   var textValue = nameValue.value;
+  var textValue = nameValue.value.toUpperCase();
 
-   greetFactory.greetingFunction(textValue, langNames)
+  greetFactory.greetingFunction(textValue, langNames)
 
-   localStorage.setItem('users', JSON.stringify( greetFactory.enterName()));
+  localStorage.setItem('users', JSON.stringify(greetFactory.enterName()));
 
-   displayEle.innerHTML =  greetFactory.returnGreeting()
-   count.innerHTML = greetFactory.greetCounter()
+  displayEle.innerHTML = greetFactory.returnGreeting()
+  count.innerHTML = greetFactory.greetCounter()
 
   if (textValue === "") {
     displayEle.innerHTML = 'Enter Name'
@@ -43,13 +37,15 @@ var greetFactory = PeopleTogreet(storedUsers)
   }
 }
 
-greetButton.addEventListener('click', function(){
+greetButton.addEventListener('click', function() {
   displayMsg()
   nameValue.value = '';
 })
-resetButton.addEventListener('click', function(){
-greetFactory.reset();
-count.innerHTML = 0;
-localStorage.clear()
-nameValue.value = '';
+
+resetButton.addEventListener('click', function() {
+  greetFactory.reset();
+  count.innerHTML = 0;
+  localStorage.setItem("users", JSON.stringify(greetFactory.enterName()));
+  nameValue.value = '';
+
 })
