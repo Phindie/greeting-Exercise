@@ -21,31 +21,32 @@ function displayMsg() {
 
   var textValue = nameValue.value.toUpperCase();
 
-  greetFactory.greetingFunction(textValue, langNames)
+  greetFactory.greetingFunction(textValue, langNames);
 
   localStorage.setItem('users', JSON.stringify(greetFactory.enterName()));
 
-  displayEle.innerHTML = greetFactory.returnGreeting()
-  count.innerHTML = greetFactory.greetCounter()
+  displayEle.innerHTML = greetFactory.returnGreeting();
+  count.innerHTML = greetFactory.greetCounter();
 
   if (textValue === "") {
     displayEle.innerHTML = 'Enter Name'
   }
 
   if (!greetingRadio) {
-    displayEle.innerHTML = 'Select Language'
+    displayEle.innerHTML = 'Select Language';
+    // count.innerHTML = 0;
   }
 }
 
 greetButton.addEventListener('click', function() {
-  displayMsg()
+  displayMsg();
   nameValue.value = '';
 })
 
 resetButton.addEventListener('click', function() {
   greetFactory.reset();
   count.innerHTML = 0;
-  localStorage.setItem("users", JSON.stringify(greetFactory.enterName()));
+  localStorage.clear()
   nameValue.value = '';
 
 })

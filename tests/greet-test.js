@@ -27,7 +27,7 @@ describe('The Greeting Widget Function', function(){
     var greeting = PeopleTogreet();
 
     greeting.greetingFunction("Phindi", 'IsiXhosa');
-    greeting.greetingFunction("Amanda", 'IsiXhosa');
+    greeting.greetingFunction("Shaun", 'IsiXhosa');
     greeting.greetingFunction("Banele", 'IsiXhosa');
     greeting.greetingFunction("lwando", 'IsiXhosa');
 

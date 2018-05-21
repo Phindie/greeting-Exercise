@@ -1,7 +1,6 @@
+function PeopleTogreet(storedUser) {
 
-function PeopleTogreet(storedUser){
-
-  var kids = '';
+  // var name = '';
   var greetCount = 0;
   var nameAnLanguage = '';
   var peopleNames = {};
@@ -9,45 +8,43 @@ function PeopleTogreet(storedUser){
 
 
 
-  function greetingFunction(name, langNames){
+  function greetingFunction(name, langNames) {
 
-    if(name != ''){
-      kids = name
-    }
     if (storedUser) {
-        peopleNames = storedUser
+      peopleNames = storedUser
     }
-    if(kids !== ""){
 
-    if(peopleNames[kids] === undefined){
-
-     peopleNames[kids] = 0;
+    if (name !== "" && langNames ) {
+      if (peopleNames[name] === undefined) {
+        peopleNames[name] = 0;
       }
     }
+
     if (langNames === 'English') {
       nameAnLanguage = 'Hello, ' + name;
     }
-    if(langNames === 'Afrikaans'){
+    if (langNames === 'Afrikaans') {
       nameAnLanguage = 'Goeie Dag, ' + name;
     }
     if (langNames === 'IsiXhosa') {
       nameAnLanguage = 'Molo, ' + name;
     }
+
   }
 
-  function returnGreeting(){
+  function returnGreeting() {
     return nameAnLanguage
   }
 
-  function greetCounter(){
+  function greetCounter() {
     return Object.keys(peopleNames).length;
   }
 
-  function enterName(){
+  function enterName(storedUser) {
     return peopleNames
   }
 
-  function reset(){
+  function reset() {
     peopleNames = {}
   }
 
